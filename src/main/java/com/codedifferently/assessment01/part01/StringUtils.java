@@ -7,7 +7,9 @@ public class StringUtils {
      * @return
      */
     public static String[] getWords(String sentence){
-        return null;
+
+        String[] words = sentence.split("[\\W_]+");
+        return words;
     }
 
     /**
@@ -16,7 +18,11 @@ public class StringUtils {
      * @return
      */
     public static String getFirstWord(String sentence){
-        return null;
+        String arr[] = sentence.split(" ", 2);
+        String firstWord = arr[0];
+        String theRest = arr[1];
+        return firstWord;
+
     }
 
     /**
@@ -25,7 +31,13 @@ public class StringUtils {
      * @return
      */
     public static String reverseFirstWord(String sentence){
-        return null;
+        String arr[] = sentence.split(" ", 2);
+        String firstWord = arr[0];
+        String theRest = arr[1];
+        StringBuilder builder = new StringBuilder(firstWord);
+        builder.reverse();
+
+        return builder.toString();
     }
 
     /**
@@ -33,13 +45,32 @@ public class StringUtils {
      * @param sentence
      * @return
      */
-    public static String reverseFirstWordThenCamelCase(String sentence){return null;}
+    public static String reverseFirstWordThenCamelCase(String sentence) {
+        String arr[] = sentence.split(" ", 2);
+        String firstWord = arr[0];
+        String theRest = arr[1];
+        StringBuilder builder = new StringBuilder(firstWord);
+        builder.reverse();
+        String word = builder.toString();
+        char[] worded = word.toCharArray();
+        for (int i = 0; i < worded.length; i++) {
+            char letter = worded[i];
+        }
+        return word;
 
-    /**
-     * Remove Character at index
+    }
+
+        /**
+
+         }   * Remove Character at index
      * @param str
      * @param index
      * @return
      */
-    public static String removeCharacterAtIndex(String str, int index){return null;}
+    public static String removeCharacterAtIndex(String str, int index){
+        StringBuilder builder = new StringBuilder(str);
+        builder.deleteCharAt(index);
+        String newString = builder.toString();
+        return newString;
+    }
 }
